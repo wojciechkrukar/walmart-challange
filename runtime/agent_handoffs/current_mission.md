@@ -64,6 +64,8 @@ To release the gate, append a `HITL_DECISION:` block below this line with one of
 [2026-05-13Z] DISPATCH T002 → lead_quant :: Seasonal Naive Baseline — built first, OOS MAPE/RMSE, cached to runtime/benchmarks/baseline.json
 [2026-05-13Z] REVIEW T002 → critical_reviewer :: APPROVE — no BLOCKERs/MAJORs; SN-A 3.31% MAPE full-sample, 3.11% excl-pandemic
 [2026-05-13Z] DISPATCH T003 → lead_quant :: Walmart-fiscal aggregation + lag-aligned FRED merge with merge_asof + decision-date assertion
+[2026-05-13Z] REVIEW T003 → critical_reviewer :: APPROVE — all 5 technical checks pass; 3/3 spot-checks exact match; assertion passes 65/65 rows; one NIT (print uses unfiltered merged instead of spot_check variable)
+[2026-05-13Z] DISPATCH T004 → lead_quant :: Forward-rolling OOS CV: FRED signal vs. baseline; bootstrap CI on delta_MAPE
 ```
 
 ## Blockers
