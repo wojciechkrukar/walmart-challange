@@ -171,3 +171,22 @@ clearance; all technical execution was delegated.
 
 *Total orchestration steps: 6 Director dispatches, 3 Critical Reviewer checkpoints.*
 *All guardrails satisfied. Artifacts ready for HITL final review.*
+
+---
+
+## Governance documentation index
+
+The full agentic-workforce-kernel governance scaffold for this Mission is vendored under `docs/`:
+
+- **Universal kernel contracts (read-only):** [`docs/kernel/`](docs/kernel/) — director protocol, task contracts, escalation matrix, review policy, state model, command grammar
+- **Project-specific extensions:** [`docs/team/`](docs/team/) — long-form roles, dispatch loop, escalation thresholds, Task Brief / ICR / Critic Verdict templates, PR class matrix, collaboration rules
+- **Mission specs:** [`docs/projects/walmart-signal-validation/`](docs/projects/walmart-signal-validation/) — pipeline architecture, KPIs + 8 hard guardrails, evaluation-harness spec, COVID structural-break protocol, Phase plans
+- **LLM tier matrix per role:** [`docs/llm-roster.md`](docs/llm-roster.md) — Director Opus 4.7, Lead Quant Opus 4.7, Critical Reviewer Opus 4.6 (deliberately different from the Generator)
+- **Milestone tracker:** [`docs/milestones.md`](docs/milestones.md) — M0–M7 with status
+- **Per-milestone exit criteria:** [`docs/delivery_kpis.md`](docs/delivery_kpis.md)
+- **In-flight Director state:** [`runtime/agent_handoffs/current_mission.md`](runtime/agent_handoffs/current_mission.md)
+- **Frozen verdict numbers:** [`runtime/benchmarks/baseline.json`](runtime/benchmarks/baseline.json)
+- **Mission run report:** [`runtime/run_reports/2026-05-13-walmart-signal-validation.md`](runtime/run_reports/2026-05-13-walmart-signal-validation.md)
+- **Top-level walkthrough:** [`WALKTHROUGH.md`](WALKTHROUGH.md)
+
+This prompt log captures the live orchestration; the documents above capture the governance contract that produced it.

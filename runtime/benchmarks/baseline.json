@@ -1,0 +1,72 @@
+{
+  "mission_id": "WAL-2026-05-13",
+  "mission_name": "walmart-signal-validation",
+  "frozen_at": "2026-05-13",
+  "harness": "forward-rolling time-series CV, min_train=16 quarters, step=1",
+  "data": {
+    "fred_csv": "data/retail_sales_fred.csv",
+    "walmart_csv": "data/walmart_revenue.csv",
+    "fred_rows": 195,
+    "walmart_rows": 65,
+    "fold_count": 44
+  },
+  "covid_window": {
+    "start": "2020-01-31",
+    "end": "2021-10-31",
+    "fold_count": 8
+  },
+  "metrics": {
+    "full_oos": {
+      "n": 44,
+      "baseline_mape_pct": 2.36,
+      "model_mape_pct": 2.49,
+      "baseline_rmse_usd_bn": 4.04,
+      "model_rmse_usd_bn": 4.91,
+      "mape_delta_pp": 0.13,
+      "mape_delta_pct": 5.5,
+      "verdict": "baseline_wins"
+    },
+    "pre_covid": {
+      "n": 19,
+      "baseline_mape_pct": 2.02,
+      "model_mape_pct": 1.29,
+      "baseline_rmse_usd_bn": 2.87,
+      "model_rmse_usd_bn": 1.84,
+      "mape_delta_pp": -0.73,
+      "mape_delta_pct": -36.1,
+      "verdict": "model_wins"
+    },
+    "covid": {
+      "n": 8,
+      "baseline_mape_pct": 2.07,
+      "model_mape_pct": 4.21,
+      "baseline_rmse_usd_bn": 3.63,
+      "model_rmse_usd_bn": 8.00,
+      "mape_delta_pp": 2.14,
+      "mape_delta_pct": 103.4,
+      "verdict": "baseline_wins_model_degrades"
+    },
+    "post_covid": {
+      "n": 17,
+      "baseline_mape_pct": 2.86,
+      "model_mape_pct": 3.03,
+      "baseline_rmse_usd_bn": 5.19,
+      "model_rmse_usd_bn": 5.34,
+      "mape_delta_pp": 0.17,
+      "mape_delta_pct": 5.9,
+      "verdict": "baseline_marginally_wins"
+    },
+    "ex_covid": {
+      "n": 36,
+      "baseline_mape_pct": 2.42,
+      "model_mape_pct": 2.11,
+      "baseline_rmse_usd_bn": 4.13,
+      "model_rmse_usd_bn": 3.91,
+      "mape_delta_pp": -0.31,
+      "mape_delta_pct": -12.8,
+      "verdict": "model_wins"
+    }
+  },
+  "verdict": "Conditional. The FRED RSXFS signal beats the Seasonal Naive Baseline in pre-COVID and ex-COVID windows; it does not beat the baseline on the full sample because the COVID window dominates test errors.",
+  "guardrail_violations": []
+}
