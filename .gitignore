@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# YipitData orchestration — local agent runtime artefacts
+.env
+.env.*
+!.env.example
+# Word/Office session lockfiles (e.g. challange_docs/~$ke_home_exam_candidate.docx)
+~$*
+
+.DS_Store
