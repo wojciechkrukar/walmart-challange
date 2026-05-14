@@ -34,7 +34,7 @@ graph LR
 The Director is the only agent that talks to the human. The Lead Quant is the only agent that
 writes analysis code. The Critical Reviewer is the only agent that approves an artifact for
 sign-off. Long-form role definitions live in [`docs/team/roles.md`](docs/team/roles.md);
-short-form system prompts in [`.agent/`](.agent/).
+short-form system prompts in [`.github/agents/`](.github/agents/).
 
 ## Mission status
 
