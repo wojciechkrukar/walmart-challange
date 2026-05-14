@@ -68,6 +68,10 @@ To release the gate, append a `HITL_DECISION:` block below this line with one of
 [2026-05-13Z] DISPATCH T004 → lead_quant :: Forward-rolling OOS CV: FRED signal vs. baseline; bootstrap CI on delta_MAPE
 [2026-05-13Z] REVIEW T004 → critical_reviewer :: APPROVE — M1 beats SNA by +0.74pp (CI [+0.41pp,+1.65pp], entirely positive); MINOR: headline delta window mismatch (49 vs 42 quarters) — defer fix to T006; no BLOCKER/MAJOR
 [2026-05-13Z] DISPATCH T005 → lead_quant :: 2020 regime treatment + causal why + falsifiable headline claim
+[2026-05-13Z] REVIEW T005 → critical_reviewer :: REQUEST_CHANGES — MAJOR-1: Cell 35 uses stale 0.74pp delta; aligned delta is 1.07pp
+[2026-05-13Z] FIX T005 → lead_quant :: Updated Cell 35 falsifiable claim to 1.07pp/1.17pp aligned deltas
+[2026-05-13Z] RE-REVIEW T005 → critical_reviewer :: APPROVE — MAJOR-1 resolved; memo headline = 1.07pp full-sample, 1.17pp excl-pandemic
+[2026-05-13Z] DISPATCH T006 → lead_quant :: memo.md + prompts.md finalisation + notebook polish
 ```
 
 ## Blockers
