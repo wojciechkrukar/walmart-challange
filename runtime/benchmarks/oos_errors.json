@@ -11,7 +11,8 @@
       "n_quarters": 42,
       "MAPE": 0.025731,
       "RMSE": 0.033,
-      "delta_MAPE_vs_SNA": 0.0074,
+      "delta_MAPE_vs_SNA": 0.0107,
+      "delta_note": "aligned: SNA restricted to same 42-quarter M1 OOS window (Cell 36); SNA_aligned_MAPE=0.0364",
       "bootstrap_95ci_lo": 0.004136,
       "bootstrap_95ci_hi": 0.016502
     },
@@ -19,7 +20,8 @@
       "n_quarters": 37,
       "MAPE": 0.022787,
       "RMSE": 0.0277,
-      "delta_MAPE_vs_SNA": 0.008361,
+      "delta_MAPE_vs_SNA": 0.0117,
+      "delta_note": "aligned: SNA restricted to same 37-quarter excl-pandemic window (Cell 36); SNA_aligned_MAPE=0.0345",
       "bootstrap_95ci_lo": 0.005202,
       "bootstrap_95ci_hi": 0.017405
     }
