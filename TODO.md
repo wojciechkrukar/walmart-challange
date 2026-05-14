@@ -5,24 +5,24 @@
 
 ## Open
 
-- `#TODO:` [m1/lead_quant] **T001** Data ingestion + sanity EDA — load both CSVs from `data/`, assert SHA-256, print sanity summary, one overlay plot. (target: M1; depends on: HITL clearance) — see [`todos/T001-data-ingestion.md`](todos/T001-data-ingestion.md)
-- `#TODO:` [m2/lead_quant] **T002** Seasonal Naive Baseline — built FIRST, OOS MAPE/RMSE, full-sample + pandemic-excluded, cached to `runtime/benchmarks/baseline.json`. (target: M2; depends on: T001) — [`todos/T002-baseline-construction.md`](todos/T002-baseline-construction.md)
-- `#TODO:` [m3/lead_quant] **T003** Walmart-fiscal aggregation + publication-lag-aware FRED merge with `merge_asof` and decision-date assertion. (target: M3; depends on: T002) — [`todos/T003-fred-merge-with-publication-lag.md`](todos/T003-fred-merge-with-publication-lag.md)
-- `#TODO:` [m4/lead_quant] **T004** Forward-rolling OOS CV: M1 (OLS on FRED YoY) and optionally M2 (FRED + SN as second regressor) vs. baseline; bootstrap 95% CI on `delta_MAPE`. (target: M4; depends on: T003) — [`todos/T004-out-of-sample-cv.md`](todos/T004-out-of-sample-cv.md)
-- `#TODO:` [m5/lead_quant] **T005** 2020 regime treatment + causal "why" + falsifiable headline claim. (target: M5; depends on: T004) — [`todos/T005-structural-break-analysis.md`](todos/T005-structural-break-analysis.md)
-- `#TODO:` [m6/lead_quant+director] **T006** `memo.md` (≤ 1 page) + `prompts.md` (chronological log + < 200-word reflection) + final notebook polish. (target: M6; depends on: T005) — [`todos/T006-memo-and-prompts-log.md`](todos/T006-memo-and-prompts-log.md)
-- `#TODO:` [continuous/critical_reviewer] **T999** Apply the standing audit checklist on every Review Request. — [`todos/T999-reviewer-audit-checklist.md`](todos/T999-reviewer-audit-checklist.md)
+*(none — mission COMPLETE)*
 
 ## Awaiting HITL
 
-- `#TODO:` [hitl] **Clearance to dispatch T001.** Director acknowledgment is in `runtime/agent_handoffs/current_mission.md`. Append `HITL_DECISION: approve` (or `modify` with notes) to that file to release the gate.
+*(none)*
 
 ## In Progress
 
-*(empty — mission is in `PENDING_HITL_CLEARANCE`; nothing dispatched yet)*
+*(none)*
 
 ## Done
 
+- `#DONE:` [m1/lead_quant] **T001** Data ingestion + sanity EDA — SHA-256 assertions pass; overlay plot (commit `6509c6f`)
+- `#DONE:` [m2/lead_quant] **T002** Seasonal Naive Baseline — SN-A MAPE 3.31% full / 3.11% excl-pandemic; `baseline.json` written (commits `24921cd`, `32095ba`)
+- `#DONE:` [m3/lead_quant] **T003** Fiscal FRED merge — 65-row `analysis_df`, lag assertion passes 65/65 rows (commit `172c07b`)
+- `#DONE:` [m4/lead_quant] **T004** OOS CV — M1 MAPE 2.57%; aligned delta 1.07pp; CI [+0.41,+1.65pp]; `oos_errors.json` written (commits `38597f1`, `836d5a7`)
+- `#DONE:` [m5/lead_quant] **T005** Structural break + falsifiable claim (1.07pp/1.17pp) after fix cycle (commit `48ee5df`)
+- `#DONE:` [m6/lead_quant+director] **T006** `memo.md` (581w) + `prompts.md` (194-word reflection) + `oos_errors.json` aligned delta fix (commit `0ab3e54`)
 - `#DONE:` [m0/director] **M0 — Bootstrap & Scaffolding** Kernel-aligned scaffolding mirroring `wojciechkrukar/agentic-workforce-kernel`: `.agent/` system prompts for the 3 personas (GPT-4o / Claude 3.5 Sonnet / OpenAI o1), `docs/kernel/` (vendored, generic), `docs/team/` (project extensions), `docs/projects/yipitdata-signal/` (challenge brief, methodology, data contracts, KPIs, caveats), `docs/llm-roster.md`, `docs/milestones.md`, `docs/delivery_kpis.md`, `todos/` (T001–T006 + T999), root `TODO.md` + `WALKTHROUGH.md` + YipitData-aware `README.md`, source CSVs copied verbatim into `data/`, stub deliverables (`analysis.ipynb`, `memo.md`, `prompts.md`) marked **BLOCKED — awaiting HITL clearance**, `runtime/agent_handoffs/current_mission.md` opened with `STATUS: PENDING_HITL_CLEARANCE`. (current PR)
 
 ## Discrepancies surfaced from `challange_docs/`
