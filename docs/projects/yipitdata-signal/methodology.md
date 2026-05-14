@@ -67,10 +67,18 @@ do them well.
 
 ## 7. Headline metrics
 
-- Primary: **OOS MAPE** on YoY growth predictions (matches the brief's "X percent" framing).
-- Secondary: **OOS RMSE** on YoY growth predictions (less sensitive to small denominators in
-  pandemic quarters).
-- Per-quarter error tables go into `runtime/benchmarks/` for the Reviewer to inspect.
+Define the quarter-level YoY residual as `e_t = pred_yoy_t - actual_yoy_t`, where both YoY terms
+are rates computed as `value_t / value_{t-4} - 1`.
+
+- Primary: **OOS MAPE**, computed as the mean of `abs(e_t) * 100`. This is the
+  level-equivalent percentage error because `abs(e_t) = abs((pred_level_t - actual_level_t) /
+  actual_level_{t-4})`; the denominator is the **actual prior-year quarter level**
+  `actual_level_{t-4}`, not current-quarter actuals and not the actual YoY rate itself. Report in
+  **percent (%)**.
+- Secondary: **OOS RMSE**, computed as `sqrt(mean(e_t^2))`. Report in **percentage points of YoY
+  growth (pp)**, i.e. on the raw YoY residual, not re-scaled by any additional denominator.
+- Per-quarter error tables go into `runtime/benchmarks/` for the Reviewer to inspect, using these
+  same definitions.
 
 ## 8. Structural-break handling (2020 COVID)
 
