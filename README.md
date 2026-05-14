@@ -38,11 +38,12 @@ short-form system prompts in [`.agent/`](.agent/).
 
 ## Mission status
 
-The mission is **`PENDING_HITL_CLEARANCE`**. Scaffolding is complete; nothing has been
-dispatched to the Lead Quant. To release the gate, append a `HITL_DECISION:` block to
-[`runtime/agent_handoffs/current_mission.md`](runtime/agent_handoffs/current_mission.md).
+The mission is **`COMPLETE`**. The final analysis artifacts, including the notebook outputs,
+executive memo, prompt log, and benchmark deliverables, have been produced and committed.
+[`runtime/agent_handoffs/current_mission.md`](runtime/agent_handoffs/current_mission.md)
+records the completed mission state.
 
-See [`TODO.md`](TODO.md) for the live work tracker and [`docs/milestones.md`](docs/milestones.md)
+See [`TODO.md`](TODO.md) for the final work tracker and [`docs/milestones.md`](docs/milestones.md)
 for the milestone view.
 
 ## Hard guardrails
