@@ -66,6 +66,8 @@ To release the gate, append a `HITL_DECISION:` block below this line with one of
 [2026-05-13Z] DISPATCH T003 → lead_quant :: Walmart-fiscal aggregation + lag-aligned FRED merge with merge_asof + decision-date assertion
 [2026-05-13Z] REVIEW T003 → critical_reviewer :: APPROVE — all 5 technical checks pass; 3/3 spot-checks exact match; assertion passes 65/65 rows; one NIT (print uses unfiltered merged instead of spot_check variable)
 [2026-05-13Z] DISPATCH T004 → lead_quant :: Forward-rolling OOS CV: FRED signal vs. baseline; bootstrap CI on delta_MAPE
+[2026-05-13Z] REVIEW T004 → critical_reviewer :: APPROVE — M1 beats SNA by +0.74pp (CI [+0.41pp,+1.65pp], entirely positive); MINOR: headline delta window mismatch (49 vs 42 quarters) — defer fix to T006; no BLOCKER/MAJOR
+[2026-05-13Z] DISPATCH T005 → lead_quant :: 2020 regime treatment + causal why + falsifiable headline claim
 ```
 
 ## Blockers
